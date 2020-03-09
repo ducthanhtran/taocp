@@ -1,4 +1,4 @@
-// Euclid's algorithm: algorithms E and F in "The Art of Programming, volume 1 (3rd edition)".
+// Euclid's algorithm: algorithms E and F in "The Art of Programming, volume 1 (3rd edition), chapter 1.1".
 #include <iostream>
 #include <string>
 
@@ -11,11 +11,11 @@ int euclid(const int m, const int n) {
 
 
 // Algorithm F
-int euclid_f(int m, int n) {
+int euclid_2(int m, int n) {
     m = m % n;
     if(m == 0) { return n; }
     n = n % m;
-    return n == 0 ? m : euclid_f(m, n);
+    return n == 0 ? m : euclid_2(m, n);
 }
 
 
