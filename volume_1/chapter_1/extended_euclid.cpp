@@ -3,7 +3,7 @@
 #include <string>
 
 struct Result {
-    int d;
+    int gcd;
     int a;
     int b;
 };
@@ -33,8 +33,7 @@ Result extended_euclid(int m, int n) {
         r = m % n;
         q = m / n;
     }
-    Result res = {n, a, b};
-    return res;
+    return Result{n, a, b};
 }
 
 
@@ -43,9 +42,9 @@ int main(int argc, char* argv[]) {
     const int m = std::stoi(argv[1]);
     const int n = std::stoi(argv[2]);
 
-    const Result res = extended_euclid(m, n);
+    const auto res = extended_euclid(m, n);
 
-    std::cout << "Greatest common divisor of (" << m << ", " << n << ") is " << res.d
+    std::cout << "Greatest common divisor of (" << m << ", " << n << ") is " << res.gcd
               << " with coefficients a=" << res.a << ", b=" << res.b << " for Bézout's identity\n";
     return 0;
 }
